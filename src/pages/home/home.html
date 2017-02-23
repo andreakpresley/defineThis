@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="word">
+    <ion-card-header>
+      {{word.word}}
+    </ion-card-header>
+    <ion-card-content>
+      <h2>Definition:</h2>
+      <p>"{{word.definition}}"</p>
+    </ion-card-content>
+  </ion-card>
+
+  <button ion-button block (click)='getNewWord()'>New Word!</button>
+  {{seconds}}
+  <button ion-button block (click)='startTimer()'>Start Timer!</button>
+  <button ion-button block color="danger" (click)='stopTimer()'>Stop Timer!</button>
+</ion-content>

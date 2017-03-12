@@ -16,12 +16,8 @@ interface Word  {
 
 export class HomePage {
   public word: Word;
-<<<<<<< HEAD
   private seconds: number;
-=======
-  private defaultTimer: number = 120;
-  private seconds: number = this.defaultTimer;
->>>>>>> master
+
   private timer;
   private timerState: string = "start"
 
@@ -50,11 +46,7 @@ export class HomePage {
   }
 
   private startTimer() {
-<<<<<<< HEAD
-=======
-    this.seconds = this.defaultTimer;
     this.timerState = "Restart";
->>>>>>> master
     this.countdownTimer();
     
   }

@@ -21,17 +21,4 @@
   </div>
   <button ion-button block (click)='startTimer()'>{{timerState}} Timer!</button>
   <button ion-button block color="danger" (click)='stopTimer()'>Stop Timer!</button>
-  <ion-grid>
-    <ion-row>
-      <ion-col width-25>
-        <ion-list>
-          <ion-item>
-            <ion-label floating>Timer in Seconds</ion-label>
-            <ion-input type="number" [(ngModel)]="defaultTimer"></ion-input>
-          </ion-item>
-        </ion-list>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
 </ion-content>

@@ -1,3 +1,4 @@
+import { SettingService } from './../../providers/setting-service';
 import { Component } from '@angular/core';
 
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
@@ -15,13 +16,19 @@ interface Word  {
 
 export class HomePage {
   public word: Word;
-  private seconds: number = 90;
+  private seconds: number;
   private timer;
 
-  constructor(public navCtrl: NavController, private firebase: AngularFire) {  }
+  constructor(public navCtrl: NavController, private firebase: AngularFire, private settingService: SettingService) { 
+   }
 
   ionViewDidLoad() {
     this.getNewWord();
+    this.seconds  = this.settingService.timerLength;
+  }
+
+  ionViewWillEnter() { 
+    this.seconds  = this.settingService.timerLength;
   }
 
   private getWord(number) {
@@ -37,7 +44,6 @@ export class HomePage {
   }
 
   private startTimer() {
-    this.seconds = 90;
     this.countdownTimer();
     
   }

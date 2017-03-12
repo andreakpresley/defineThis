@@ -1,3 +1,5 @@
+import { SettingsPage } from './../pages/settings/settings';
+import { SettingService } from './../providers/setting-service';
 import { ScorePage } from './../pages/score/score';
 import { RulesPage } from './../pages/rules/rules';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -24,6 +26,7 @@ export const firebaseConfig = {
     RulesPage,
     ScorePage,
     HomePage,
+    SettingsPage,
     TabsPage
   ],
   imports: [
@@ -36,8 +39,9 @@ export const firebaseConfig = {
     RulesPage,
     ScorePage,
     HomePage,
+    SettingsPage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},SettingService]
 })
 export class AppModule {}

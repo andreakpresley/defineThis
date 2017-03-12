@@ -1,3 +1,4 @@
+import { SettingsPage } from './../settings/settings';
 import { ScorePage } from './../score/score';
 import { RulesPage } from './../rules/rules';
 import { Component } from '@angular/core';
@@ -13,6 +14,8 @@ export class TabsPage {
   tab1Root: any = HomePage;
   tab2Root: any = RulesPage;
   tab3Root: any = ScorePage;
+  tab4Root: any = SettingsPage;
+  
 
   constructor() {
 

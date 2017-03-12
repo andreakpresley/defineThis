@@ -16,8 +16,14 @@ interface Word  {
 
 export class HomePage {
   public word: Word;
+<<<<<<< HEAD
   private seconds: number;
+=======
+  private defaultTimer: number = 120;
+  private seconds: number = this.defaultTimer;
+>>>>>>> master
   private timer;
+  private timerState: string = "start"
 
   constructor(public navCtrl: NavController, private firebase: AngularFire, private settingService: SettingService) { 
    }
@@ -44,20 +50,30 @@ export class HomePage {
   }
 
   private startTimer() {
+<<<<<<< HEAD
+=======
+    this.seconds = this.defaultTimer;
+    this.timerState = "Restart";
+>>>>>>> master
     this.countdownTimer();
     
   }
 
   private countdownTimer() {    
     this.seconds = this.seconds - 1;
+    if (this.timerState === 'Restart') {
+      clearTimeout(this.timer);
+    }
     if (this.seconds > 0) {
       this.timer = setTimeout(() => this.countdownTimer(), 1000);
     } else {
+      // this.timerState = "Start";
       console.log('timmer over');
     }
   }
 
   private stopTimer() {
+    this.timerState = "Start";
     clearTimeout(this.timer);
   }
 
